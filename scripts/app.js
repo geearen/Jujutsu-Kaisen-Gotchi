@@ -40,7 +40,7 @@ console.log("JUJUTSU KAISEN");
 /*  FOOD button when clicked Health stats will increase by 2  */
 
 //TRAIN --> will increase Itadori health by a little and increase his hunger & sleepiness level as well TODO
-/* TRAIN button when clicked Health stats will increase by 1*/
+/* TRAIN button when clicked Health stats will increase by 1 and Increase hunger by 2 */
 
 //SLEEP ---> will lower his sleepiness level and increase his health level  TODO
 /* Sleep button will act as a rest --> Sleep will decrease by 2 */
@@ -66,15 +66,15 @@ console.log("JUJUTSU KAISEN");
 //EXTRA FEATURE ===== Feature Creep ======= ICE BOX ======== STRETCH GOALS
 /* 
     * Food button ---->decrease hunger by 1
-    * Train button -----> Increase hunger by 2 and increase sleepiness by 1
-    * Sleep button --->Hunger will increase by 1 and
+    * Train button -----> and increase sleepiness by 1
+    * Sleep button --->Hunger will increase by 1 
     * add a power lvl metric that act as a (the level of the game / the higher the number the harder it gets to keep Itadori alive)
     * add a SAKUNA METRIC  ( experience level)
     * add a confidence boost that will boost up the SAKUNA BOOST = each SAKUNA BOOST INCREASES the POWER LEVEL === the faster the game progress
     * add more monster having differently damage level , also increasing the SAKUNA BOOST == faster the game progress
     * add sounds
     * add animations when button is being press
-    * 
+    * disables other buttons, one button at a time and no repeating button
 
 */
 
@@ -84,21 +84,37 @@ const kaisen ={
     hunger: 2,
     sleepiness: 1,
     sakuna: 0,
+
+
+
     /* SECTION METHODS */
+    increaseHealth(){
+        kaisen.health += 2;
+        kaisen.hunger--;
+        $('#health').text(`Health:  ${kaisen.health}`);
+        $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
+    },
 
+    training(){
+        kaisen.hunger+=2;
+        kaisen.health++;
+        $('#health').text(`Health:  ${kaisen.health}`);
+        $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
+    },
 
+    decreaseSleep(){
+        console.log("sleep");
+        kaisen.sleepiness--;
+        $('#sleepiness').text(`Sleepiness: ${kaisen.sleepiness}`);
+    },
 
 };
 
 
-$('.button.food').on("click", function(){
-    console.log("click food");
-});
 
-$('.button.train').on("click", function () {
-    console.log("click train");
-});
 
-$('.button.sleep').on("click", function () {
-    console.log("click sleep");
-});
+$('.button.food').on("click", kaisen.increaseHealth);
+
+$('.button.train').on("click", kaisen.training);
+
+$('.button.sleep').on("click", kaisen.decreaseSleep);
