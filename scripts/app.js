@@ -9,10 +9,10 @@ console.log("JUJUTSU KAISEN");
 /* NOTE */
 // In the beginning of the game user will be prompted and ask for their the nickname they want to use TODO
 // Main Character of the game will Yuji Itadori, the objective of the game is Role - Play as him 
-// HEALTH STATS will start at 8 out 10 TODO
-// HUNGER STATS will start at 2 out 10  TODO
-// SLEEPINESS will start at 1 out 10  TODO
-// SUKUNA bar will start at 0 it will increase over time (use of timer) and shows the round  ===== MAX LEVEL is 20. 
+// HEALTH STATS will start at 8 out 10 TODO DONE
+// HUNGER STATS will start at 2 out 10  TODO DONE
+// SLEEPINESS will start at 1 out 10  TODO DONE
+// SUKUNA bar will start at 0 it will increase over time (use of timer) and shows the round  ===== MAX LEVEL is 20. TODO DONE
 
 
 
@@ -62,10 +62,6 @@ console.log("JUJUTSU KAISEN");
 
 
 
-
-
-
-
 /* REVIEW */
 //EXTRA FEATURE ===== Feature Creep ======= ICE BOX ======== STRETCH GOALS
 /* 
@@ -81,3 +77,28 @@ console.log("JUJUTSU KAISEN");
     * 
 
 */
+
+const kaisen ={
+    nickname : "",
+    health :  8,
+    hunger: 2,
+    sleepiness: 1,
+    sakuna: 0,
+    /* SECTION METHODS */
+
+
+
+};
+
+
+$('.button.food').on("click", function(){
+    console.log("click food");
+});
+
+$('.button.train').on("click", function () {
+    console.log("click train");
+});
+
+$('.button.sleep').on("click", function () {
+    console.log("click sleep");
+});
