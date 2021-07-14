@@ -112,20 +112,27 @@ const kaisen = {
 
     /* SECTION METHODS */
     increaseHealth(){
-        if(kaisen.health >=10 || kaisen.hunger >=0){
-        kaisen.health += 2;
-        kaisen.hunger-=4;
-        $('#health').text(`Health:  ${kaisen.health}`);
-        $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
+        if(kaisen.health < 10){
+            kaisen.health += 2;
+            $('#health').text(`Health:  ${kaisen.health}`);
+            if(kaisen.hunger >= 4){
+                kaisen.hunger-=4;
+                $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
+            }else {
+                kaisen.hunger-=2;
+                $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
+            }
         }
     },
 
     training(){
-        if(kaisen.hunger <=10 || kaisen.health <= 10){
-        kaisen.hunger+=2;
-        kaisen.health+=2;
-        $('#health').text(`Health:  ${kaisen.health}`);
-        $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
+        if(kaisen.hunger < 10 ){
+            kaisen.hunger+=2;
+            $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
+            if(kaisen.health < 10){
+                kaisen.health+=2;
+                $('#health').text(`Health:  ${kaisen.health}`);
+            }
         }
     },
 
@@ -172,10 +179,7 @@ const kaisen = {
         kaisen.increaseHunger();
         kaisen.increaseSleepiness();
 
-        if(kaisen.sleepiness > 10){
-            kaisen.health--;
-            $('#health').text(`Health: ${kaisen.health}`);
-        }
+
         if(kaisen.health == 0){
             $('h1').text('=== GAME IS OVER ====');
         }
@@ -196,9 +200,15 @@ const kaisen = {
     increaseSleepiness(){
         if(this.sleepiness <= 10){
             this.sleepiness++;
-            $('#sleepiness').text(`Slepiness: ${kaisen.sleepiness}`);
+            $('#sleepiness').text(`Slepiness: ${this.sleepiness}`);
+            
+            if(this.sleepiness >= 10){
+                this.health--;
+                $('#health').text(`Health: ${this.health}`);
+            }
         }
-    }
+    },
+
 };
 
 
