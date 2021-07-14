@@ -26,6 +26,22 @@ An interactive game where player will play as Itadori Yuji from the show called 
 # WireFrame 
 ![WIREFRAME](https://i.imgur.com/cN9tW1w.png)
 
+# Milestone
+
+    1. Set-up the html,css, and javascript file. Added the basic css and index.html ✔️DONE
+    2. Create the USER STORY / GAME LOGIC ✔️DONE
+    3. Use jquery to test game buttons works properly ✔️ DONE
+    4. UPDATE the CSS File to look more viewable ✔️DONE
+    5. add the basic game logic = changing key value pair and showing on the html ✔️ DONE
+    6. Create a time function ✔️ DONE
+    7. Add metric modifier and if statements to cap the health and hunger metric ✔️ DONE
+    8. Add a reset function, increase level (sukuna) and fix start time ✔️ DONE
+    9. Add root colors on css ✔️ DONE
+    10. Add font-family and link it to the local repo ✔️DONE
+    11. Add a increaseHunger method ✔️ DONE
+    12. Add a increaseSleepines method 
+    13. Update reset method and added a reset button ✔️ DONE
+    14. 
 
 # Feature Creep
     * Food button ----> decrease hunger by 1
