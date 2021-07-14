@@ -10,7 +10,7 @@
 # User Stories
 
 # WireFrame 
-![WIREFRAME](https://imgur.com/a/OOyH888)
+![WIREFRAME](https://i.imgur.com/cN9tW1w.png)
 
 
 # Feature Creep
