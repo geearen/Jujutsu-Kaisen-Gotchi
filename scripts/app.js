@@ -13,6 +13,7 @@ console.log("JUJUTSU KAISEN");
 // HUNGER STATS will start at 2 out 10  TODO DONE
 // SLEEPINESS will start at 1 out 10  TODO DONE
 // SUKUNA bar will start at 0 it will increase over time (use of timer) and shows the round  ===== MAX LEVEL is 20. TODO DONE
+//TIME has max time of 120s
 
 
 
@@ -78,12 +79,13 @@ console.log("JUJUTSU KAISEN");
 
 */
 
-const kaisen ={
+const kaisen = {
     nickname : "",
     health :  8,
     hunger: 2,
     sleepiness: 1,
     sakuna: 0,
+    time: 0,
 
 
 
@@ -104,10 +106,27 @@ const kaisen ={
 
     decreaseSleep(){
         console.log("sleep");
-        kaisen.sleepiness--;
+        kaisen.sleepiness-=2;
         $('#sleepiness').text(`Sleepiness: ${kaisen.sleepiness}`);
     },
 
+
+    timer: null,
+    startTimer(){
+        console.log("===GAME START====");
+        kaisen.timer = setInterval(kaisen.increaseTime, 1000);
+    },
+    increaseTime(){
+        kaisen.time++;
+        $('#timer__display').text(`Timer: ${kaisen.time}s`);
+        if (kaisen.time >= 120){
+            kaisen.sakuna++;
+        }
+    },
+
+
+
+    
 };
 
 
@@ -118,3 +137,5 @@ $('.button.food').on("click", kaisen.increaseHealth);
 $('.button.train').on("click", kaisen.training);
 
 $('.button.sleep').on("click", kaisen.decreaseSleep);
+
+$('#start').on("click", kaisen.startTimer);
