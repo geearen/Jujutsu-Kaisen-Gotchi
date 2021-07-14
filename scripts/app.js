@@ -91,17 +91,21 @@ const kaisen = {
 
     /* SECTION METHODS */
     increaseHealth(){
+        if(kaisen.health < 10 || kaisen.hunger < 0){
         kaisen.health += 2;
         kaisen.hunger--;
         $('#health').text(`Health:  ${kaisen.health}`);
         $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
+        }
     },
 
     training(){
+        if(kaisen.hunger <10 || kaisen.health < 10){
         kaisen.hunger+=2;
         kaisen.health++;
         $('#health').text(`Health:  ${kaisen.health}`);
         $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
+        }
     },
 
     decreaseSleep(){
@@ -110,7 +114,7 @@ const kaisen = {
         $('#sleepiness').text(`Sleepiness: ${kaisen.sleepiness}`);
     },
 
-
+    /* SECTION ===== Time and Rounds */
     timer: null,
     startTimer(){
         console.log("===GAME START====");
@@ -122,11 +126,31 @@ const kaisen = {
         if (kaisen.time >= 120){
             kaisen.sakuna++;
         }
+
     },
 
+    /* SECTION ==== Decreasing the metric/ stats */
+    game:null,
 
+    startGame(){
+        kaisen.startTimer();
+        kaisen.game = setInterval(kaisen.metricModify, 2000);
 
+    },
+    metricModify(){
+        kaisen.health--;
+        kaisen.hunger++;
+        kaisen.sleepiness++;
+        $('#health').text(`Health: ${kaisen.health}`);
+        $('#hunger').text(`Hunger: ${kaisen.hunger}`);
+        $('#sleepiness').text(`Slepiness: ${kaisen.sleepiness}`);
+        if(kaisen.health == 0){
+            $('h1').text('=== GAME IS OVER ====');
+        }
+    },
     
+    
+
 };
 
 
@@ -138,4 +162,4 @@ $('.button.train').on("click", kaisen.training);
 
 $('.button.sleep').on("click", kaisen.decreaseSleep);
 
-$('#start').on("click", kaisen.startTimer);
+$('#start').on("click", kaisen.startGame);
