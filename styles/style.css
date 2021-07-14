@@ -1,5 +1,17 @@
 :root{
+    /* MAIN COLOR */
+    --dark-purple: #2d1e3fff;
+    --russian-violet: #40205aff;
+    --dark-slate-blue: #5c4b97ff;
+    --glossy-grape: #9d8fb2ff;
+    --lavender-gray: #bfbdd3ff;
 
+    /* LEVEL UP COLOR */
+    --dark-purple: #361526ff;
+    --red-violet-color-wheel: #832838ff;
+    --ultra-red: #ef7687ff;
+    --sky-blue: #7acfebff;
+    --maximum-blue: #48b8ddff;
 }
 
 
