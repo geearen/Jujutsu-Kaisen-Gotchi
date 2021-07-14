@@ -84,10 +84,23 @@ const kaisen = {
     health :  8,
     hunger: 2,
     sleepiness: 1,
-    sakuna: 0,
+    sukuna: 0,
     time: 0,
+    
+    /*  SECTION  START GAME */
+    startGame(){
+        kaisen.startTimer();
+        kaisen.game = setInterval(kaisen.metricModify, 2000);
+        kaisen.resetGame();
+    },
 
-
+    resetGame(){
+        kaisen.health = 8;
+        kaisen.hunger = 2;
+        kaisen.sleepiness = 1;
+        kaisen.sukuna = 0;
+        kaisen.time = 0;
+    },
 
     /* SECTION METHODS */
     increaseHealth(){
@@ -109,34 +122,42 @@ const kaisen = {
     },
 
     decreaseSleep(){
+        if(kaisen.sleepiness > 0){
         console.log("sleep");
         kaisen.sleepiness-=2;
         $('#sleepiness').text(`Sleepiness: ${kaisen.sleepiness}`);
+        }
     },
 
     /* SECTION ===== Time and Rounds */
     timer: null,
     startTimer(){
-        console.log("===GAME START====");
-        kaisen.timer = setInterval(kaisen.increaseTime, 1000);
+        console.warn("===GAME START====");
+        this.timer = setInterval(this.increaseTime, 1000);
     },
     increaseTime(){
         kaisen.time++;
         $('#timer__display').text(`Timer: ${kaisen.time}s`);
-        if (kaisen.time >= 120){
-            kaisen.sakuna++;
+        if (kaisen.time >= 60){
+            kaisen.sukuna++;
+            kaisen.increaseSukunaLevel();
         }
-
+        
+    },
+    increaseSukunaLevel(){
+        clearInterval(kaisen.timer);
+        $('#level').text(`Sukuna: ${kaisen.sukuna}`);
+        if(kaisen.sukuna >= 20){
+            $('h1').text('=== YOU WIN ===');
+            kaisen.resetGame();
+        }
+        kaisen.time = 0;
+        kaisen.startTimer();
     },
 
     /* SECTION ==== Decreasing the metric/ stats */
     game:null,
 
-    startGame(){
-        kaisen.startTimer();
-        kaisen.game = setInterval(kaisen.metricModify, 2000);
-
-    },
     metricModify(){
         kaisen.health--;
         kaisen.hunger++;
