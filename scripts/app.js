@@ -93,7 +93,7 @@ const kaisen = {
         kaisen.game = setInterval(kaisen.metricModify, 2000);
         kaisen.resetGame();
     },
-
+    /*  SECTION  RESETS GAME */
     resetGame(){
         kaisen.health = 8;
         kaisen.hunger = 2;
@@ -104,18 +104,18 @@ const kaisen = {
 
     /* SECTION METHODS */
     increaseHealth(){
-        if(kaisen.health < 10 || kaisen.hunger < 0){
+        if(kaisen.health >=10 || kaisen.hunger >=0){
         kaisen.health += 2;
-        kaisen.hunger--;
+        kaisen.hunger-=4;
         $('#health').text(`Health:  ${kaisen.health}`);
         $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
         }
     },
 
     training(){
-        if(kaisen.hunger <10 || kaisen.health < 10){
+        if(kaisen.hunger <=10 || kaisen.health <= 10){
         kaisen.hunger+=2;
-        kaisen.health++;
+        kaisen.health+=2;
         $('#health').text(`Health:  ${kaisen.health}`);
         $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
         }
@@ -124,12 +124,12 @@ const kaisen = {
     decreaseSleep(){
         if(kaisen.sleepiness > 0){
         console.log("sleep");
-        kaisen.sleepiness-=2;
+        kaisen.sleepiness-=8;
         $('#sleepiness').text(`Sleepiness: ${kaisen.sleepiness}`);
         }
     },
 
-    /* SECTION ===== Time and Rounds */
+    /* SECTION ===== Time and Rounds/Level */
     timer: null,
     startTimer(){
         console.warn("===GAME START====");
@@ -155,22 +155,40 @@ const kaisen = {
         kaisen.startTimer();
     },
 
-    /* SECTION ==== Decreasing the metric/ stats */
+    /* SECTION ==== Modifying the metric/ stats relative to time */
+    
     game:null,
 
-    metricModify(){
-        kaisen.health--;
-        kaisen.hunger++;
+
+    //TODO FIX the metric according to README
+    metricModify(){ 
         kaisen.sleepiness++;
-        $('#health').text(`Health: ${kaisen.health}`);
-        $('#hunger').text(`Hunger: ${kaisen.hunger}`);
+        
         $('#sleepiness').text(`Slepiness: ${kaisen.sleepiness}`);
+        
+        kaisen.increaseHunger();
+
+        if(kaisen.sleepiness > 10){
+            kaisen.health--;
+            $('#health').text(`Health: ${kaisen.health}`);
+        }
         if(kaisen.health == 0){
             $('h1').text('=== GAME IS OVER ====');
         }
     },
     
-    
+    increaseHunger(){
+        if(this.hunger <= 10){
+            this.hunger++;
+            $('#hunger').text(`Hunger: ${kaisen.hunger}`);
+            
+            if(kaisen.hunger >= 10){
+                kaisen.health--;
+                $('#health').text(`Health: ${kaisen.health}`); 
+            } 
+        }
+    }
+
 
 };
 
