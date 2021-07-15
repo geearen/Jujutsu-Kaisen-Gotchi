@@ -89,6 +89,9 @@ const kaisen = {
 
     /* SECTION NICKNAME */
     enterName(){
+        kaisen.nickname = $('#prompt__input').val();
+        $('h3').text(`Yuji "${kaisen.nickname}" Itadori`);
+
         $('.prompt').css('visibility', 'hidden');
     },
 

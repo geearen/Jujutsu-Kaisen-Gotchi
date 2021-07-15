@@ -49,11 +49,21 @@ h1 {
     color: var(--lavender-gray);
     text-align: center;
     font-family: "midnight-font";
-    font-size:5em;
+    font-size:4.5em;
+    letter-spacing: 1px;
+}
+h3{
+    position: relative;
+    color: var(--lavender-gray);
+    font-family: "midnight-font";
+    letter-spacing: 3px;
+    right: 155px;
+    top: 20px;
 }
 h4{
     color: var(--dark-purple);
     font-size: 1.5em;
+    letter-spacing: 1px;
 }
 .prompt{
     height: 900px;
@@ -107,10 +117,10 @@ h4{
 }
 #display__character {
     position: absolute;
-    height: 150px;
-    width: 100px;
-    top: 40%;
-    right: 45%;
+    height: 300px;
+    width: 200px;
+    top: 30%;
+    right: 40%;
 
 }
 

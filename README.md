@@ -41,7 +41,7 @@ An interactive game where player will play as Itadori Yuji from the show called 
     11. Add a increaseHunger method ✔️ DONE
     12. Add a increaseSleepines method ✔️ DONE
     13. Update reset method and added a reset button ✔️ DONE
-    14. 
+    14. Add a naming function and hide inputs after completed ✔️ DONE
 
 # Feature Creep
     * Food button ----> decrease hunger by 1
