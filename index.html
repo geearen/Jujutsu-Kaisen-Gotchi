@@ -8,6 +8,7 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="styles/style.css">
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
         integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
@@ -18,49 +19,49 @@
 </head>
 
 <body>
-    
-    <h1>Jujutsu Kaisen-gotchi!</h1>
-
-    <main class="top__section">
-        <h4 id="health">Health: 8 </h4>
-        <h4 id="hunger">Hunger: 2</h4>
-        <h4 id="sleepiness">Sleepiness: 1</h4>
-        <h4 id="level">Sukuna: 0</h4>
-    </main>
-
-
-    <div class="main_display">
-        <img id ="display__background"
-        src="https://i.pinimg.com/originals/4c/57/c5/4c57c5e898197e98768607df06a90010.jpg" 
-        alt="background" 
-        />
-
-
-        <div > 
-            <img id= 'display__character' src="http://ami.animecharactersdatabase.com/uploads/chars/67712-2096367195.png" alt="Itadori"/>
-        </div>
-    </div>
-
-
-
-    <section class = "botton__section">
+    <main class="background">
+        <h1>Jujutsu Kaisen-gotchi!</h1>
         
-        <button class="button food">Food</button>
-        <button class="button train">Train</button>
-        <button class="button sleep">Sleep</button>
+        <section class="top__section">
+            <h4 id="health">Health: 8 </h4>
+            <h4 id="hunger">Hunger: 2</h4>
+            <h4 id="sleepiness">Sleepiness: 1</h4>
+            <h4 id="level">Sukuna: 0</h4>
+        </section>
         
-        <div class="timer">
-            <span id="timer__display">
-                Timer: 0s
-            </span>
+        
+        <div class="display">
+            <img id ="display__background"
+            src="https://i.pinimg.com/originals/4c/57/c5/4c57c5e898197e98768607df06a90010.jpg" 
+            alt="background" 
+            />
             
-            <button id="start"> Start! </button>
-            <button id="reset"> RESET! </button>
-
+            
+            <img id= 'display__character' src="http://ami.animecharactersdatabase.com/uploads/chars/67712-2096367195.png" alt="Itadori"/>
+        
         </div>
-    </section>
-
-
+        
+        
+        
+        <section class = "botton__section">
+            
+            <button class="button food">Food</button>
+            <button class="button train">Train</button>
+            <button class="button sleep">Sleep</button>
+            
+            <div class="timer">
+                <span id="timer__display">
+                    Timer: 0s
+                </span>
+            </div>
+            <div class="start_reset">
+                <button id="reset"> RESET! </button>
+                <button id="start"> Start! </button>
+            </div>
+            
+        </section>
+        
+    </main>
 </body>
 
 </html>

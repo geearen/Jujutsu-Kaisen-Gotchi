@@ -16,7 +16,7 @@ An interactive game where player will play as Itadori Yuji from the show called 
 3. Things to keep an eye for is the Health, Hunger and Sleepiness stats. Once the game begins, Each metric will fluctuate respective to time. Hunger will increase over time, once it reaches 10/10 Hunger - Health will decrease by 1. Same thing goes for sleepiness, reaching 10/10 Sleepiness - Health decrease by 1.  Unable to keep the Health bar above 0 will result to GAME OVER --- Itadori dies 😔.
 
 4. How to survive? Player has 3 functional buttons that will keep Itadori alive and player surviving the game WIN! YAY. 
-    - FOOD -- using the food button will increase the health of Itadori by 2 and decrease his hunger by 4.
+    - FOOD -- using the food button will increase the health of Itadori by 2 and decrease his hunger by 6.
     - TRAIN -- using the train button will increase the health of Itadori by 2 and also increase his hunger by 2.
     - SLEEP -- using the sleep button will decrease sleepiness by 8. 
 
