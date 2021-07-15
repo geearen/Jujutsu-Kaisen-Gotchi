@@ -11,7 +11,7 @@ An interactive game where player will play as Itadori Yuji from the show called 
 # User Stories
 1.  In the beginning of the game, user/player will be ask for the nickname they want to use for the game. Before starting the game, Itadori will start with Health stats of 8 out of 10, Hunger stats of 2 out 10, Sleepiness stats of 1 out 10 and Sukuna level of 0. 
 
-2. Player has to press the start button to begin the game. Once pressed, TIMER will start from 0s and reaching to 60s. Reaching the 60s will increment the sukuna level by 1 === every 60s is equal to +1 Sukuna. Reaching 20 Sukuna, the player wins the game! or beat the game.
+2. Player has to press the start button to begin the game. Once pressed, TIMER will start from 0s and reaching to 60s. Reaching the 60s will increment the sukuna level by 1 === every 20s is equal to +1 Sukuna. Reaching 20 Sukuna, the player wins the game! or beat the game.
 
 3. Things to keep an eye for is the Health, Hunger and Sleepiness stats. Once the game begins, Each metric will fluctuate respective to time. Hunger will increase over time, once it reaches 10/10 Hunger - Health will decrease by 1. Same thing goes for sleepiness, reaching 10/10 Sleepiness - Health decrease by 1.  Unable to keep the Health bar above 0 will result to GAME OVER --- Itadori dies 😔.
 

@@ -110,11 +110,12 @@ const kaisen = {
         $('#timer__display').text(`Timer: ${kaisen.time}s`);
     },
 
-    /* SECTION METHODS */
+    /* SECTION METHODS  ==== button functionality */
     increaseHealth(){
         if(kaisen.health < 10){
             kaisen.health += 2;
             $('#health').text(`Health:  ${kaisen.health}`);
+        }
             if(kaisen.hunger >= 4){
                 kaisen.hunger-=4;
                 $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
@@ -122,7 +123,6 @@ const kaisen = {
                 kaisen.hunger-=2;
                 $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
             }
-        }
     },
 
     training(){
@@ -138,7 +138,6 @@ const kaisen = {
 
     decreaseSleep(){
         if(kaisen.sleepiness > 0){
-        console.log("sleep");
         kaisen.sleepiness-=8;
         $('#sleepiness').text(`Sleepiness: ${kaisen.sleepiness}`);
         }
@@ -149,36 +148,39 @@ const kaisen = {
         console.warn("===GAME START====");
         this.timer = setInterval(this.increaseTime, 1000);
     },
+
     increaseTime(){
         kaisen.time++;
         $('#timer__display').text(`Timer: ${kaisen.time}s`);
-        if (kaisen.time >= 60){
-            kaisen.sukuna++;
+
+        if (kaisen.time == 40 || kaisen.time == 20 ){
             kaisen.increaseSukunaLevel();
+        } else if( kaisen.time == 60){
+            kaisen.increaseSukunaLevel();
+            clearInterval(kaisen.timer);
+            kaisen.startTimer();
+            kaisen.time = 0;
         }
         
     },
+    
     increaseSukunaLevel(){
-        clearInterval(kaisen.timer);
+        kaisen.sukuna++;
         $('#level').text(`Sukuna: ${kaisen.sukuna}`);
         if(kaisen.sukuna >= 20){
             $('h1').text('=== YOU WIN ===');
             kaisen.resetGame();
         }
-        kaisen.time = 0;
-        kaisen.startTimer();
+        
     },
 
     /* SECTION ==== Modifying the metric/ stats relative to time */
     
-
-
     //TODO FIX the metric according to README
     metricModify(){ 
         
         kaisen.increaseHunger();
         kaisen.increaseSleepiness();
-
 
         if(kaisen.health == 0){
             $('h1').text('=== GAME IS OVER ====');
