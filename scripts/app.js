@@ -132,9 +132,11 @@ const kaisen = {
             kaisen.hunger-=2;
             $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
         }
-        $('.button.food').attr("disabled", true);
-        $('.button.train').attr("disabled", false);
-        $('.button.sleep').attr("disabled", false);
+        $('.button.food').attr({ "disabled": true, "class": "button food nes-btn is-disabled"});
+        $('.button.train').attr({ "disabled": false, "class": "button train nes-btn" });
+        $('.button.sleep').attr({ "disabled": false, "class": "button sleep nes-btn"});
+
+        $('#display__background').attr("src", "https://i.pinimg.com/originals/09/5a/e8/095ae863a15f046100edf8efaa240452.jpg");
     },
 
     training(){
@@ -146,9 +148,11 @@ const kaisen = {
             kaisen.health+=2;
             $('#health').text(`Health:  ${kaisen.health}`);
         }
-        $('.button.food').attr("disabled", false);
-        $('.button.train').attr("disabled", true);
-        $('.button.sleep').attr("disabled", false);
+        $('.button.food').attr({ "disabled": false, "class": "button food nes-btn" });
+        $('.button.train').attr({ "disabled": true, "class": "button train nes-btn is-disabled" });
+        $('.button.sleep').attr({ "disabled": false, "class": "button sleep nes-btn" });
+        
+        $('#display__background').attr("src", "https://i.pinimg.com/originals/09/5a/e8/095ae863a15f046100edf8efaa240452.jpg");
     },
 
     decreaseSleep(){
@@ -156,9 +160,17 @@ const kaisen = {
         kaisen.sleepiness-=8;
         $('#sleepiness').text(`Sleepiness: ${kaisen.sleepiness}`);
         }
-        $('.button.food').attr("disabled", false);
-        $('.button.train').attr("disabled", false);
-        $('.button.sleep').attr("disabled", true);
+
+        $('.button.food').attr({ "disabled": false, "class": "button food nes-btn"});
+        $('.button.train').attr({ "disabled": false, "class": "button train nes-btn" });
+        $('.button.sleep').attr({ "disabled": true, "class": "button sleep nes-btn is-disabled"});
+
+        $('#display__background').attr("src", "https://i.pinimg.com/originals/4c/57/c5/4c57c5e898197e98768607df06a90010.jpg");
+        // setTimeout(kaisen.pauseAndSleep, 5000);
+    },
+
+    pauseAndSleep(){
+        console.log("sleeping");
     },
 
     /* SECTION ===== Time and Rounds/Level */
@@ -170,7 +182,8 @@ const kaisen = {
 
     increaseTime(){
         kaisen.time++;
-        $('#timer__display').text(`Timer: ${kaisen.time}s`);
+        $('.number').attr('id', 'timer__number' );
+        $('#timer__number').text(`${kaisen.time}s`);
 
         if (kaisen.time == 40 || kaisen.time == 20 ){
             kaisen.increaseSukunaLevel();

@@ -153,6 +153,9 @@ h4{
     font-size: 1em;
     font-family: "midnight-font";
 }
+#timer__number{
+    color: var(--red-violet-color-wheel);
+}
 .start_reset{
 
     display: flex;
