@@ -86,7 +86,12 @@ const kaisen = {
     sleepiness: 1,
     sukuna: 0,
     time: 0,
-    
+
+    /* SECTION NICKNAME */
+    enterName(){
+        $('.prompt').css('visibility', 'hidden');
+    },
+
     /*  SECTION  START GAME */
     game:null,
     timer: null,
@@ -111,6 +116,7 @@ const kaisen = {
     },
 
     /* SECTION METHODS  ==== button functionality */
+    // ANCHOR
     increaseHealth(){
         if(kaisen.health < 10){
             kaisen.health += 2;
@@ -225,7 +231,7 @@ const kaisen = {
 };
 
 
-
+$('.button.enter').on("click", kaisen.enterName);
 
 $('.button.food').on("click", kaisen.increaseHealth);
 
