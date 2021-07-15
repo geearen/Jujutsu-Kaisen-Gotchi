@@ -25,7 +25,6 @@
 
 * {
     box-sizing: border-box;
-    border: 2px solid red;
 }
 body{
     min-height: 100vh;
@@ -38,9 +37,13 @@ body{
 }
 .background{
     background-color: var(--russian-violet);
+    margin: 10px;
+    padding: 20px;
     height: 900px;
     width: 900px;
+    position: relative;
 }
+
 
 h1 {
     color: var(--lavender-gray);
@@ -52,14 +55,45 @@ h4{
     color: var(--dark-purple);
     font-size: 1.5em;
 }
+.prompt{
+    height: 900px;
+    width: 900px;
+    top:0%;
+    left:0%;
+    background-color: var(--dark-purple);
+    position: absolute;
+    z-index: 1;
+}
+.prompt__display{
+    position: relative;
+}
+.prompt__heading{
+    position: absolute;
+    top: 280px;
+    left: 100px;
+}
+#prompt__input{
+    position: absolute;
+    top: 450px;
+    left: 280px;
+    font-family: "midnight-font";
+    width: 10em;
+    text-align: center;
+}
+.button.enter{
+    position: absolute;
+    top: 448px;
+    left: 480px;
+}
 .top__section{
     background-color: var(--dark-slate-blue);
+    margin: 5px;
+    padding: 15px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     font-family: "midnight-font";
 }
-
 
 
 .display{
@@ -82,21 +116,31 @@ h4{
 
 /* SECTION BOTTOM */
 .botton__section{
+    padding: 10px;
     margin: 40px;
     display: flex;
     align-content: center;
     align-items: center;
     flex-direction: row;
     justify-content: space-around;
+    background-color: var(--glossy-grape);
 }
 .button{
-    padding: 20px 30px;
+    padding: 10px 30px;
     font-family: "vtks-font";
     font-size: 20px;
+}
+.button.enter{
+    padding: 8px 30px;
+    font-family:"midnight-font";
+}
+.button:hover{
+    background-color: var(--lavender-gray);
 }
 .timer{
     display: flex;
     align-self: center;
+    font-size: 1em;
     font-family: "midnight-font";
 }
 .start_reset{
@@ -110,4 +154,5 @@ h4{
     margin: 5px;
     font-family: "vtks-font";
     font-size: 20px;
+    
 }

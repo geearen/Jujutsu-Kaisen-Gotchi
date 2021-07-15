@@ -7,8 +7,8 @@
     <!-- Google Fonts -->
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="styles/style.css">
     <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/style.css">
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
         integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
@@ -20,8 +20,17 @@
 
 <body>
     <main class="background">
+        <section class = "prompt">
+            <section class ="prompt__display">
+
+                <h1 class ="prompt__heading">Jujutsu Kaisen-gotchi!</h1>
+                <input type="text" id="prompt__input" placeholder="Enter Nickname" class="nes-input is-dark">
+                <button class="button enter nes-btn">Enter</button>
+
+            </section>
+        </section>
+
         <h1>Jujutsu Kaisen-gotchi!</h1>
-        
         <section class="top__section">
             <h4 id="health">Health: 8 </h4>
             <h4 id="hunger">Hunger: 2</h4>
@@ -45,9 +54,9 @@
         
         <section class = "botton__section">
             
-            <button class="button food">Food</button>
-            <button class="button train">Train</button>
-            <button class="button sleep">Sleep</button>
+            <button class="button food nes-btn">Food</button>
+            <button class="button train nes-btn">Train</button>
+            <button class="button sleep nes-btn">Sleep</button>
             
             <div class="timer">
                 <span id="timer__display">
@@ -55,8 +64,8 @@
                 </span>
             </div>
             <div class="start_reset">
-                <button id="reset"> RESET! </button>
-                <button id="start"> Start! </button>
+                <button class="nes-btn"" id="reset"> Reset! </button>
+                <button class=" nes-btn" id="start"> Start! </button>
             </div>
             
         </section>

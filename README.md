@@ -59,3 +59,4 @@ An interactive game where player will play as Itadori Yuji from the show called 
     * https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Kaisen_Wiki
     * https://www.fontget.com/font/vtks-love-u/
     * https://www.fontget.com/font/midnight/
+    * https://github.com/nostalgic-css/NES.css
