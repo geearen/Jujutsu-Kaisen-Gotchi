@@ -116,24 +116,30 @@ const kaisen = {
             kaisen.health += 2;
             $('#health').text(`Health:  ${kaisen.health}`);
         }
-            if(kaisen.hunger >= 4){
-                kaisen.hunger-=4;
-                $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
-            }else {
-                kaisen.hunger-=2;
-                $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
-            }
+        if(kaisen.hunger >= 4){
+            kaisen.hunger-=6;
+            $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
+        }else {
+            kaisen.hunger-=2;
+            $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
+        }
+        $('.button.food').attr("disabled", true);
+        $('.button.train').attr("disabled", false);
+        $('.button.sleep').attr("disabled", false);
     },
 
     training(){
         if(kaisen.hunger < 10 ){
             kaisen.hunger+=2;
             $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
-            if(kaisen.health < 10){
-                kaisen.health+=2;
-                $('#health').text(`Health:  ${kaisen.health}`);
-            }
         }
+        if(kaisen.health < 10){
+            kaisen.health+=2;
+            $('#health').text(`Health:  ${kaisen.health}`);
+        }
+        $('.button.food').attr("disabled", false);
+        $('.button.train').attr("disabled", true);
+        $('.button.sleep').attr("disabled", false);
     },
 
     decreaseSleep(){
@@ -141,9 +147,13 @@ const kaisen = {
         kaisen.sleepiness-=8;
         $('#sleepiness').text(`Sleepiness: ${kaisen.sleepiness}`);
         }
+        $('.button.food').attr("disabled", false);
+        $('.button.train').attr("disabled", false);
+        $('.button.sleep').attr("disabled", true);
     },
 
     /* SECTION ===== Time and Rounds/Level */
+    //ANCHOR
     startTimer(){
         console.warn("===GAME START====");
         this.timer = setInterval(this.increaseTime, 1000);
@@ -174,9 +184,10 @@ const kaisen = {
         
     },
 
+
     /* SECTION ==== Modifying the metric/ stats relative to time */
+    //ANCHOR
     
-    //TODO FIX the metric according to README
     metricModify(){ 
         
         kaisen.increaseHunger();
