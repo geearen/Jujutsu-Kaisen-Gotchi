@@ -12,6 +12,9 @@
     --ultra-red: #ef7687ff;
     --sky-blue: #7acfebff;
     --maximum-blue: #48b8ddff;
+
+    /* background */
+    --main-background: url(https://64.media.tumblr.com/7f87779c30139e1c1de6dce95ad7693b/tumblr_ocwdgfVpcX1s3zokdo2_1280.jpg)
 }
 
 @font-face {
@@ -34,13 +37,18 @@ body{
     flex-direction: column;
     text-align: center;
     background-color: var(--dark-purple);
+    background-image: var(--main-background);
+    background-position: center;
+    background-size: cover;
+    position:relative;
+    
 }
 .background{
     background-color: var(--russian-violet);
     margin: 10px;
     padding: 20px;
     height: 900px;
-    width: 900px;
+    width: 1000px;
     position: relative;
 }
 
@@ -49,7 +57,7 @@ h1 {
     color: var(--lavender-gray);
     text-align: center;
     font-family: "midnight-font";
-    font-size:4.5em;
+    font-size:4em;
     letter-spacing: 1px;
 }
 h3{
@@ -58,18 +66,19 @@ h3{
     font-family: "midnight-font";
     letter-spacing: 3px;
     right: 155px;
-    top: 20px;
+    top: 10px;
 }
 h4{
     color: var(--dark-purple);
+    margin: 0px 45px 0px 45px;
     font-size: 1.5em;
     letter-spacing: 1px;
 }
 .prompt{
     height: 900px;
-    width: 900px;
-    top:0%;
-    left:0%;
+    width: 1000px;
+    top:-6px;
+    left:-6px;
     background-color: var(--dark-purple);
     position: absolute;
     z-index: 1;
@@ -80,45 +89,51 @@ h4{
 .prompt__heading{
     position: absolute;
     top: 280px;
-    left: 100px;
+    left: 170px;
 }
 #prompt__input{
     position: absolute;
     top: 450px;
-    left: 280px;
+    left: 300px;
     font-family: "midnight-font";
-    width: 10em;
+    width: 11em;
+    letter-spacing: 1px;
     text-align: center;
 }
 .button.enter{
     position: absolute;
     top: 448px;
-    left: 480px;
+    left: 500px;
 }
+
 .top__section{
     background-color: var(--dark-slate-blue);
-    margin: 5px;
-    padding: 15px;
+    height: 70px;
+    padding: 8px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     font-family: "midnight-font";
 }
 
 
 .display{
+    margin: 10px;
+    padding: 0px;
     position:relative;
     display: flex;
     justify-content: center;
+    overflow: hidden;
 }
 #display__background{   
-    max-width: 800px;
-
+    max-width: 1200px;
+    overflow: hidden;
 }
-#display__character {
+
+.display__character {
     position: absolute;
-    height: 300px;
-    width: 200px;
+    height: auto;
+    width: 500px;
     top: 30%;
     right: 40%;
 
@@ -127,12 +142,15 @@ h4{
 /* SECTION BOTTOM */
 .botton__section{
     padding: 10px;
-    margin: 40px;
+    margin: 20px;
+    width: 900px;
     display: flex;
     align-content: center;
     align-items: center;
     flex-direction: row;
     justify-content: space-around;
+    position: absolute;
+
     background-color: var(--glossy-grape);
 }
 .button{
@@ -157,7 +175,6 @@ h4{
     color: var(--red-violet-color-wheel);
 }
 .start_reset{
-
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -168,4 +185,25 @@ h4{
     font-family: "vtks-font";
     font-size: 20px;
     
+}
+/* animation */
+#animation__feed{
+    animation: bounce 2s;
+    animation-iteration-count: infinite;
+}
+
+#animation__train{
+    animation: bounceOutRight 2s;
+}
+
+#animation__sleep{
+    animation: rotateInDownLeft 2s;
+    animation-direction: reverse;
+    position: absolute;
+    height: auto;
+    width: 180px;
+    top: 35%;
+    right: 40%;
+    transform: rotate(290deg);
+
 }

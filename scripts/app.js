@@ -116,6 +116,10 @@ const kaisen = {
         $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
         $('#sleepiness').text(`Sleepiness: ${kaisen.sleepiness}`);
         $('#timer__display').text(`Timer: ${kaisen.time}s`);
+        $('.button.food').attr({ "disabled": false, "class": "button food nes-btn"});
+        $('.button.train').attr({ "disabled": false, "class": "button train nes-btn" });
+        $('.button.sleep').attr({ "disabled": false, "class": "button sleep nes-btn" });
+        $('#display__background').attr("src", "https://i.pinimg.com/originals/09/5a/e8/095ae863a15f046100edf8efaa240452.jpg");
     },
 
     /* SECTION METHODS  ==== button functionality */
@@ -132,13 +136,14 @@ const kaisen = {
             kaisen.hunger-=2;
             $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
         }
+        $('.display__character').attr("id","animation__feed");
         $('.button.food').attr({ "disabled": true, "class": "button food nes-btn is-disabled"});
         $('.button.train').attr({ "disabled": false, "class": "button train nes-btn" });
         $('.button.sleep').attr({ "disabled": false, "class": "button sleep nes-btn"});
-
+        
         $('#display__background').attr("src", "https://i.pinimg.com/originals/09/5a/e8/095ae863a15f046100edf8efaa240452.jpg");
     },
-
+    
     training(){
         if(kaisen.hunger < 10 ){
             kaisen.hunger+=2;
@@ -148,6 +153,8 @@ const kaisen = {
             kaisen.health+=2;
             $('#health').text(`Health:  ${kaisen.health}`);
         }
+        
+        $('.display__character').attr("id", "animation__train");
         $('.button.food').attr({ "disabled": false, "class": "button food nes-btn" });
         $('.button.train').attr({ "disabled": true, "class": "button train nes-btn is-disabled" });
         $('.button.sleep').attr({ "disabled": false, "class": "button sleep nes-btn" });
@@ -156,16 +163,17 @@ const kaisen = {
     },
 
     decreaseSleep(){
-        if(kaisen.sleepiness > 0){
+        if(kaisen.sleepiness < 8){
         kaisen.sleepiness-=8;
         $('#sleepiness').text(`Sleepiness: ${kaisen.sleepiness}`);
         }
-
+        $('.display__character').attr("id", "animation__sleep");
+        
         $('.button.food').attr({ "disabled": false, "class": "button food nes-btn"});
         $('.button.train').attr({ "disabled": false, "class": "button train nes-btn" });
         $('.button.sleep').attr({ "disabled": true, "class": "button sleep nes-btn is-disabled"});
 
-        $('#display__background').attr("src", "https://i.pinimg.com/originals/4c/57/c5/4c57c5e898197e98768607df06a90010.jpg");
+        $('#display__background').attr("src", "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/84a4b3da-9529-4827-95f2-bccefd8d8869/dcy0ej2-7c548891-bb0c-475c-ba67-8e8fcfe6919d.png/v1/fill/w_1280,h_720,q_80,strp/anime_bedroom_backround_by_shinasty_dcy0ej2-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvODRhNGIzZGEtOTUyOS00ODI3LTk1ZjItYmNjZWZkOGQ4ODY5XC9kY3kwZWoyLTdjNTQ4ODkxLWJiMGMtNDc1Yy1iYTY3LThlOGZjZmU2OTE5ZC5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.orXJUHL2urpZNTJVZuRy4BJwXyWTMxkC-GblQOjkfn0");
         // setTimeout(kaisen.pauseAndSleep, 5000);
     },
 

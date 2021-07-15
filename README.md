@@ -33,7 +33,7 @@ An interactive game where player will play as Itadori Yuji from the show called 
     3. Use jquery to test game buttons works properly ✔️ DONE
     4. UPDATE the CSS File to look more viewable ✔️DONE
     5. add the basic game logic = changing key value pair and showing on the html ✔️ DONE
-    6. Create a time function ✔️ DONE
+    6. Create a timer function ✔️ DONE
     7. Add metric modifier and if statements to cap the health and hunger metric ✔️ DONE
     8. Add a reset function, increase level (sukuna) and fix start time ✔️ DONE
     9. Add root colors on css ✔️ DONE
@@ -42,6 +42,7 @@ An interactive game where player will play as Itadori Yuji from the show called 
     12. Add a increaseSleepines method ✔️ DONE
     13. Update reset method and added a reset button ✔️ DONE
     14. Add a naming function and hide inputs after completed ✔️ DONE
+    15. Add animation ✔️  DONE
 
 # Feature Creep
     * Food button ----> decrease hunger by 1
@@ -51,8 +52,8 @@ An interactive game where player will play as Itadori Yuji from the show called 
     * add a confidence boost that will boost up the SAKUNA BOOST = each SAKUNA BOOST INCREASES the POWER LEVEL === the faster the game progress
     * add more monster having differently damage level , also increasing the SAKUNA BOOST == faster the game progress
     * add sounds
-    * add animations when button is being press
-    * disables other buttons, one button at a time and no repeating button
+    * add animations when button is being press DONE
+    * disables other buttons, one button at a time and no repeating button DONE
 
 # Resources
     * https://www.animecharactersdatabase.com/characters.php?id=104841
@@ -60,3 +61,5 @@ An interactive game where player will play as Itadori Yuji from the show called 
     * https://www.fontget.com/font/vtks-love-u/
     * https://www.fontget.com/font/midnight/
     * https://github.com/nostalgic-css/NES.css
+    * https://star-plasma.tumblr.com/post/149855350982/weight-of-living
+    * https://www.deviantart.com/shinasty/art/Anime-bedroom-Backround-782719886
