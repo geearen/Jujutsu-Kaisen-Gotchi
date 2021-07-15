@@ -188,26 +188,26 @@ const kaisen = {
     },
     
     increaseHunger(){
-        if(this.hunger <= 10){
+        if(this.hunger < 10){
             this.hunger++;
             $('#hunger').text(`Hunger: ${this.hunger}`);
-            
-            if(this.hunger >= 10){
-                this.health--;
-                $('#health').text(`Health: ${this.health}`); 
-            } 
         }
+            
+        if(this.hunger >= 10){
+            this.health--;
+            $('#health').text(`Health: ${this.health}`); 
+        } 
     },
 
     increaseSleepiness(){
-        if(this.sleepiness <= 10){
+        if(this.sleepiness < 10){
             this.sleepiness++;
             $('#sleepiness').text(`Slepiness: ${this.sleepiness}`);
+        }
             
-            if(this.sleepiness >= 10){
-                this.health--;
-                $('#health').text(`Health: ${this.health}`);
-            }
+        if(this.sleepiness >= 10){
+            this.health--;
+            $('#health').text(`Health: ${this.health}`);
         }
     },
 
