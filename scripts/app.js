@@ -119,6 +119,7 @@ const kaisen = {
         $('.button.food').attr({ "disabled": false, "class": "button food nes-btn"});
         $('.button.train').attr({ "disabled": false, "class": "button train nes-btn" });
         $('.button.sleep').attr({ "disabled": false, "class": "button sleep nes-btn" });
+        $('.display__character').attr("id", "animation__reset");
         $('#display__background').attr("src", "https://i.pinimg.com/originals/09/5a/e8/095ae863a15f046100edf8efaa240452.jpg");
     },
 
@@ -141,7 +142,7 @@ const kaisen = {
         $('.button.train').attr({ "disabled": false, "class": "button train nes-btn" });
         $('.button.sleep').attr({ "disabled": false, "class": "button sleep nes-btn"});
         
-        $('#display__background').attr("src", "https://i.pinimg.com/originals/09/5a/e8/095ae863a15f046100edf8efaa240452.jpg");
+        $('#display__background').attr("src", "images/jujutsu_kaisen_scenery_vending_machine_hd_jujutsu_kaisen-1920x1080.jpg");
     },
     
     training(){

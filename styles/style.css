@@ -189,7 +189,12 @@ h4{
 /* animation */
 #animation__feed{
     animation: bounce 2s;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 3;
+    position: absolute;
+    height: auto;
+    width: 250px;
+    top: 10%;
+    right: 40%;
 }
 
 #animation__train{
@@ -206,4 +211,11 @@ h4{
     right: 40%;
     transform: rotate(290deg);
 
+}
+#animation__reset{
+    position: absolute;
+    height: auto;
+    width: 500px;
+    top: 30%;
+    right: 40%;
 }
