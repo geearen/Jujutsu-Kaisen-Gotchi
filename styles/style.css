@@ -58,12 +58,14 @@ body{
 
 }
 
+
 h1 {
     color: var(--lavender-gray);
     text-align: center;
     font-family: "midnight-font";
     font-size:4em;
     letter-spacing: 1px;
+    text-shadow: 3px 1px 0px var(--red-violet-color-wheel);
 }
 h3{
     position: relative;
@@ -72,12 +74,14 @@ h3{
     letter-spacing: 3px;
     right: 155px;
     top: 10px;
+    text-shadow: 1px 1px 0px var(--ultra-red);
 }
 h4{
-    color: var(--dark-purple);
+    color: var(--lavender-gray);
     margin: 0px 45px 0px 45px;
     font-size: 1.5em;
     letter-spacing: 1px;
+    text-shadow: 2px 2px 2px var(--red-violet-color-wheel);
 }
 .prompt{
     height: 900px;
@@ -94,7 +98,9 @@ h4{
 .prompt__heading{
     position: absolute;
     top: 280px;
-    left: 170px;
+    left: 90px;
+    font-size: 5em;
+    text-shadow: 12px 2px 5px var(--red-violet-color-wheel);
 }
 #prompt__input{
     position: absolute;
@@ -154,7 +160,6 @@ h4{
     flex-direction: row;
     justify-content: space-around;
     position: absolute;
-
     background-color: var(--glossy-grape);
 }
 .button{
@@ -174,6 +179,7 @@ h4{
     align-self: center;
     font-size: 1em;
     font-family: "midnight-font";
+    text-shadow: 2px 1px 0px var(--lavender-gray);
 }
 #timer__number{
     color: var(--red-violet-color-wheel);
