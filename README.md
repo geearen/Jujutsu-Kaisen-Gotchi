@@ -14,14 +14,14 @@ An interactive game where player will play as Itadori Yuji from the show called 
 # User Stories
 1.  In the beginning of the game, user/player will be ask for the nickname they want to use for the game. Before starting the game, Itadori will start with Health stats of 8 out of 10, Hunger stats of 2 out 10, Sleepiness stats of 1 out 10 and Sukuna level of 0. 
 
-2. Player has to press the start button to begin the game. Once pressed, TIMER will start from 0s and reaching to 60s. Reaching the 10s will increment the sukuna level by 1 === every 10s is equal to +1 Sukuna. Reaching 6 Sukuna, the player wins the game! or beat the game.
+2. Player has to press the start button to begin the game. Once pressed, TIMER will start from 0s and reaching to 60s. Reaching the 10s will increment the sukuna level by 1 === every 10s is equal to +1 Sukuna. Reaching 10 Sukuna, the player wins the game! or beat the game.
 
 3. Things to keep an eye for is the Health, Hunger and Sleepiness stats. Once the game begins, Each metric will fluctuate respective to time. Hunger will increase  over time , once it reaches 10/10 Hunger - Health will decrease by 1. Same thing goes for sleepiness, reaching 10/10 Sleepiness - Health decrease by 1.  Unable to keep the Health bar above 0 will result to GAME OVER --- Itadori dies 😔.
 
 4. How to survive? Player has 3 functional buttons that will keep Itadori alive and player surviving the game WIN! YAY. 
     - FOOD -- using the food button will increase the health of Itadori by 2 and decrease his hunger by 6.
-    - TRAIN -- using the train button will increase the health of Itadori by 2 and also increase his hunger by 2.
-    - SLEEP -- using the sleep button will decrease sleepiness by 5. 
+    - TRAIN -- using the train button will increase the Sukuna by 1, increase his hunger by 2 and increase his sleepiness by 1.
+    - SLEEP -- using the sleep button will decrease sleepiness by 5
 
 
 
@@ -55,8 +55,8 @@ JavaScript - HTML - CSS - Animate.CSS - NES CSS Framework
 
 # Feature Creep
     * Food button ----> decrease hunger by 6 ADDED
-    * Train button -----> and increase sleepiness by 1
-    * Sleep button --->Hunger will increase by 1 
+    * Train button -----> and increase sleepiness by 1 ADDED
+    * Sleep button --->Hunger will increase by 1 ADDED
     * add a power lvl metric that act as a (the level of the game / the higher the number the harder it gets to keep Itadori alive)
     * add a confidence boost that will boost up the SAKUNA BOOST = each SAKUNA BOOST INCREASES the POWER LEVEL === the faster the game progress
     * add more monster having differently damage level , also increasing the SAKUNA BOOST == faster the game progress

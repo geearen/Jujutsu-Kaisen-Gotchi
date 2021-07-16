@@ -82,15 +82,24 @@ const kaisen = {
     },
     
     training(){
+        if(kaisen.sukuna < 9){
+            kaisen.sukuna++;
+            $('#level').text(`Sukuna: ${kaisen.sukuna}`);
+        }
         if(kaisen.hunger < 9 ){
             kaisen.hunger+=2;
             $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
         }
-        if(kaisen.health < 9){
-            kaisen.health+=2;
-            $('#health').text(`Health:  ${kaisen.health}`);
-        }
+        // if(kaisen.health < 9){
+        //     kaisen.health+=2;
+        //     $('#health').text(`Health:  ${kaisen.health}`);
+        // }
         
+        if(kaisen.sleepiness < 10){
+            kaisen.sleepiness++;
+            $('#sleepiness').text(`Sleepiness: ${kaisen.sleepiness}`);
+        }
+
         $('.display__character').attr("id", "animation__train");
         $('.button.food').attr({ "disabled": false, "class": "button food nes-btn" });
         $('.button.train').attr({ "disabled": true, "class": "button train nes-btn is-disabled" });
@@ -100,6 +109,7 @@ const kaisen = {
     },
 
     decreaseSleep(){
+        
         if(kaisen.sleepiness > 5){
             kaisen.sleepiness-=5;
             $('#sleepiness').text(`Sleepiness: ${kaisen.sleepiness}`);
@@ -157,15 +167,15 @@ const kaisen = {
     increaseSukunaLevel(){
         kaisen.sukuna++;
         $('#level').text(`Sukuna: ${kaisen.sukuna}`);
-        if(kaisen.sukuna >= 6){
+        if(kaisen.sukuna >= 10){
             kaisen.winRound();
             clearInterval(kaisen.game);
             clearInterval(kaisen.timer);
-        }else if (kaisen.sukuna >= 4){
+        }else if (kaisen.sukuna >= 8){
             $('.display__character').attr("src", "https://www.jujutsukaisen.jp/images/chara_detail5.png");
-        }else if (kaisen.sukuna > 3){
+        }else if (kaisen.sukuna > 5){
             $('.display__character').attr("src", "images/yuji.png");
-        }else if (kaisen.sukuna > 2){
+        }else if (kaisen.sukuna > 3){
             $('.display__character').attr("src", "images/yuji2.png")
         }
         
