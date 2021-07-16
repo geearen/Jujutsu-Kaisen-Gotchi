@@ -115,12 +115,12 @@ const kaisen = {
         $('#health').text(`Health:  ${kaisen.health}`);
         $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
         $('#sleepiness').text(`Sleepiness: ${kaisen.sleepiness}`);
-        $('#timer__display').text(`Timer: ${kaisen.time}s`);
+        $('#timer__number').text(`${kaisen.time}s`);
         $('.button.food').attr({ "disabled": false, "class": "button food nes-btn"});
         $('.button.train').attr({ "disabled": false, "class": "button train nes-btn" });
         $('.button.sleep').attr({ "disabled": false, "class": "button sleep nes-btn" });
-        $('.display__character').attr("id", "animation__reset");
-        $('#display__background').attr("src", "https://i.pinimg.com/originals/09/5a/e8/095ae863a15f046100edf8efaa240452.jpg");
+        $('.display__character').attr({"id": "animation__reset", "visibility": "visible"});
+        $('#display__background').attr({"src": "https://i.pinimg.com/originals/09/5a/e8/095ae863a15f046100edf8efaa240452.jpg", style: "opacity:1"});
     },
 
     /* SECTION METHODS  ==== button functionality */
@@ -142,7 +142,7 @@ const kaisen = {
         $('.button.train').attr({ "disabled": false, "class": "button train nes-btn" });
         $('.button.sleep').attr({ "disabled": false, "class": "button sleep nes-btn"});
         
-        $('#display__background').attr("src", "images/jujutsu_kaisen_scenery_vending_machine_hd_jujutsu_kaisen-1920x1080.jpg");
+        $('#display__background').attr({ "src": "images/jujutsu_kaisen_scenery_vending_machine_hd_jujutsu_kaisen-1920x1080.jpg", style: "opacity:1"});
     },
     
     training(){
@@ -160,7 +160,7 @@ const kaisen = {
         $('.button.train').attr({ "disabled": true, "class": "button train nes-btn is-disabled" });
         $('.button.sleep').attr({ "disabled": false, "class": "button sleep nes-btn" });
         
-        $('#display__background').attr("src", "https://i.pinimg.com/originals/09/5a/e8/095ae863a15f046100edf8efaa240452.jpg");
+        $('#display__background').attr({ "src": "https://i.pinimg.com/originals/09/5a/e8/095ae863a15f046100edf8efaa240452.jpg", style: "opacity:1"});
     },
 
     decreaseSleep(){
@@ -174,7 +174,8 @@ const kaisen = {
         $('.button.train').attr({ "disabled": false, "class": "button train nes-btn" });
         $('.button.sleep').attr({ "disabled": true, "class": "button sleep nes-btn is-disabled"});
 
-        $('#display__background').attr("src", "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/84a4b3da-9529-4827-95f2-bccefd8d8869/dcy0ej2-7c548891-bb0c-475c-ba67-8e8fcfe6919d.png/v1/fill/w_1280,h_720,q_80,strp/anime_bedroom_backround_by_shinasty_dcy0ej2-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvODRhNGIzZGEtOTUyOS00ODI3LTk1ZjItYmNjZWZkOGQ4ODY5XC9kY3kwZWoyLTdjNTQ4ODkxLWJiMGMtNDc1Yy1iYTY3LThlOGZjZmU2OTE5ZC5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.orXJUHL2urpZNTJVZuRy4BJwXyWTMxkC-GblQOjkfn0");
+        $('#display__background').attr({
+            "src": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/84a4b3da-9529-4827-95f2-bccefd8d8869/dcy0ej2-7c548891-bb0c-475c-ba67-8e8fcfe6919d.png/v1/fill/w_1280,h_720,q_80,strp/anime_bedroom_backround_by_shinasty_dcy0ej2-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvODRhNGIzZGEtOTUyOS00ODI3LTk1ZjItYmNjZWZkOGQ4ODY5XC9kY3kwZWoyLTdjNTQ4ODkxLWJiMGMtNDc1Yy1iYTY3LThlOGZjZmU2OTE5ZC5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.orXJUHL2urpZNTJVZuRy4BJwXyWTMxkC-GblQOjkfn0", style:"opacity:0.8"});
         // setTimeout(kaisen.pauseAndSleep, 5000);
     },
 
@@ -220,15 +221,16 @@ const kaisen = {
     //ANCHOR
     
     metricModify(){ 
-        
-        kaisen.increaseHunger();
         kaisen.increaseSleepiness();
-
-        if(kaisen.health == 0){
+        kaisen.increaseHunger();
+},
+    endGame(){
+        $('.display__character').attr("id", "character__hidden");
             $('h1').text('=== GAME IS OVER ====');
-        }
-    },
-    
+            $('#display__background').attr("src", "https://recenthighlights.com/wp-content/uploads/2020/11/Jujutsu-Kaisen-Itadori-Death-1024x576.jpg");
+            clearInterval(kaisen.game);
+            clearInterval(kaisen.timer);
+},
     increaseHunger(){
         if(this.hunger < 10){
             this.hunger++;
@@ -238,7 +240,10 @@ const kaisen = {
         if(this.hunger >= 10){
             this.health--;
             $('#health').text(`Health: ${this.health}`); 
-        } 
+        }
+        if(this.health < 0){
+            kaisen.endGame()
+        }
     },
 
     increaseSleepiness(){

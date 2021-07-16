@@ -136,7 +136,6 @@ h4{
     width: 500px;
     top: 30%;
     right: 40%;
-
 }
 
 /* SECTION BOTTOM */
@@ -210,12 +209,17 @@ h4{
     top: 35%;
     right: 40%;
     transform: rotate(290deg);
-
 }
+
 #animation__reset{
     position: absolute;
     height: auto;
     width: 500px;
     top: 30%;
     right: 40%;
+    z-index:1;
+}
+
+#character__hidden{
+    visibility: hidden;
 }

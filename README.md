@@ -64,3 +64,4 @@ An interactive game where player will play as Itadori Yuji from the show called 
     * https://github.com/nostalgic-css/NES.css
     * https://star-plasma.tumblr.com/post/149855350982/weight-of-living
     * https://www.deviantart.com/shinasty/art/Anime-bedroom-Backround-782719886
+    * https://recenthighlights.com/jujutsu-kaisen-episode-6-release-date/
