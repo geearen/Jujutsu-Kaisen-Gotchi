@@ -208,7 +208,7 @@ const kaisen = {
     increaseSleepiness(){
         if(this.sleepiness < 10){
             this.sleepiness++;
-            $('#sleepiness').text(`Slepiness: ${this.sleepiness}`);
+            $('#sleepiness').text(`Sleepiness: ${this.sleepiness}`);
         }
             
         if(this.sleepiness >= 10){
