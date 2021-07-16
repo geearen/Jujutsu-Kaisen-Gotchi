@@ -233,5 +233,9 @@ $('#start').on("click", kaisen.startGame);
 $('#reset').on("click", kaisen.resetGame);
 
 //AUDIO
-const audio = document.getElementById('music');
-audio.volume = 0.2;
+function play(){
+    const audio = document.getElementById('music');
+    audio.volume = 0.2;
+
+}
+play();
