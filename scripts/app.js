@@ -39,6 +39,7 @@ const kaisen = {
         $('#sleepiness').text(`Sleepiness: ${kaisen.sleepiness}`);
         $('#timer__number').text(`${kaisen.time}s`);
         $('#level').text(`Sukuna: ${kaisen.sukuna}`);
+        $('h1').text('Jujutsu Kaisen-gotchi!');
         $('.button.food').attr({ "disabled": false, "class": "button food nes-btn"});
         $('.button.train').attr({ "disabled": false, "class": "button train nes-btn" });
         $('.button.sleep').attr({ "disabled": false, "class": "button sleep nes-btn" });
