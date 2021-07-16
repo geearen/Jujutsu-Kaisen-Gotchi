@@ -14,7 +14,7 @@
     --maximum-blue: #48b8ddff;
 
     /* background */
-    --main-background: url(https://64.media.tumblr.com/7f87779c30139e1c1de6dce95ad7693b/tumblr_ocwdgfVpcX1s3zokdo2_1280.jpg)
+    --main-background: url(https://64.media.tumblr.com/7f87779c30139e1c1de6dce95ad7693b/tumblr_ocwdgfVpcX1s3zokdo2_1280.jpg);
 }
 
 @font-face {
@@ -125,7 +125,7 @@ h4{
     justify-content: center;
     overflow: hidden;
 }
-#display__background{   
+.display__background{   
     max-width: 1200px;
     overflow: hidden;
 }

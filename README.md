@@ -13,12 +13,12 @@ An interactive game where player will play as Itadori Yuji from the show called 
 
 2. Player has to press the start button to begin the game. Once pressed, TIMER will start from 0s and reaching to 60s. Reaching the 60s will increment the sukuna level by 1 === every 20s is equal to +1 Sukuna. Reaching 20 Sukuna, the player wins the game! or beat the game.
 
-3. Things to keep an eye for is the Health, Hunger and Sleepiness stats. Once the game begins, Each metric will fluctuate respective to time. Hunger will increase over time, once it reaches 10/10 Hunger - Health will decrease by 1. Same thing goes for sleepiness, reaching 10/10 Sleepiness - Health decrease by 1.  Unable to keep the Health bar above 0 will result to GAME OVER --- Itadori dies 😔.
+3. Things to keep an eye for is the Health, Hunger and Sleepiness stats. Once the game begins, Each metric will fluctuate respective to time. Hunger will increase  over time , once it reaches 10/10 Hunger - Health will decrease by 1. Same thing goes for sleepiness, reaching 10/10 Sleepiness - Health decrease by 1.  Unable to keep the Health bar above 0 will result to GAME OVER --- Itadori dies 😔.
 
 4. How to survive? Player has 3 functional buttons that will keep Itadori alive and player surviving the game WIN! YAY. 
     - FOOD -- using the food button will increase the health of Itadori by 2 and decrease his hunger by 6.
     - TRAIN -- using the train button will increase the health of Itadori by 2 and also increase his hunger by 2.
-    - SLEEP -- using the sleep button will decrease sleepiness by 8. 
+    - SLEEP -- using the sleep button will decrease sleepiness by 5. 
 
 
 
@@ -44,6 +44,8 @@ An interactive game where player will play as Itadori Yuji from the show called 
     14. Add CSS libraries ✔️  DONE
     15. Add a naming function and hide inputs after completed ✔️ DONE
     16. Add animation ✔️  DONE
+    17. Reviewed the game logic and fixed bugs/problem ✔️ DONE
+    18. Add winning animation 
 
 # Feature Creep
     * Food button ----> decrease hunger by 1
@@ -65,3 +67,4 @@ An interactive game where player will play as Itadori Yuji from the show called 
     * https://star-plasma.tumblr.com/post/149855350982/weight-of-living
     * https://www.deviantart.com/shinasty/art/Anime-bedroom-Backround-782719886
     * https://recenthighlights.com/jujutsu-kaisen-episode-6-release-date/
+    * https://www.zerochan.net/3232404

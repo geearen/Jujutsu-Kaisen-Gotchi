@@ -120,37 +120,50 @@ const kaisen = {
         $('.button.train').attr({ "disabled": false, "class": "button train nes-btn" });
         $('.button.sleep').attr({ "disabled": false, "class": "button sleep nes-btn" });
         $('.display__character').attr({"id": "animation__reset", "visibility": "visible"});
-        $('#display__background').attr({"src": "https://i.pinimg.com/originals/09/5a/e8/095ae863a15f046100edf8efaa240452.jpg", style: "opacity:1"});
+        $('.display__background').attr({"src": "https://i.pinimg.com/originals/09/5a/e8/095ae863a15f046100edf8efaa240452.jpg", style: "opacity:1"});
     },
 
     /* SECTION METHODS  ==== button functionality */
     // ANCHOR
     increaseHealth(){
-        if(kaisen.health < 10){
+        if(kaisen.health < 9){
             kaisen.health += 2;
             $('#health').text(`Health:  ${kaisen.health}`);
         }
-        if(kaisen.hunger >= 4){
+        if(kaisen.hunger > 6){
             kaisen.hunger-=6;
             $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
-        }else {
+        }else if(kaisen.hunger>5){
+            kaisen.hunger-=5;
+            $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
+        }else if(kaisen.hunger>4){
+            kaisen.hunger -= 4;
+            $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
+        }else if(kaisen.hunger>3){
+            kaisen.hunger-=3;
+            $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
+        }else if(kaisen.hunger>2){
             kaisen.hunger-=2;
             $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
+        }else if(kaisen.hunger>=1){
+            kaisen.hunger--;
+            $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
         }
+
         $('.display__character').attr("id","animation__feed");
         $('.button.food').attr({ "disabled": true, "class": "button food nes-btn is-disabled"});
         $('.button.train').attr({ "disabled": false, "class": "button train nes-btn" });
         $('.button.sleep').attr({ "disabled": false, "class": "button sleep nes-btn"});
         
-        $('#display__background').attr({ "src": "images/jujutsu_kaisen_scenery_vending_machine_hd_jujutsu_kaisen-1920x1080.jpg", style: "opacity:1"});
+        $('.display__background').attr({ "src": "images/jujutsu_kaisen_scenery_vending_machine_hd_jujutsu_kaisen-1920x1080.jpg", style: "opacity:1"});
     },
     
     training(){
-        if(kaisen.hunger < 10 ){
+        if(kaisen.hunger < 9 ){
             kaisen.hunger+=2;
             $('#hunger').text(`Hunger:  ${kaisen.hunger}`);
         }
-        if(kaisen.health < 10){
+        if(kaisen.health < 9){
             kaisen.health+=2;
             $('#health').text(`Health:  ${kaisen.health}`);
         }
@@ -160,13 +173,25 @@ const kaisen = {
         $('.button.train').attr({ "disabled": true, "class": "button train nes-btn is-disabled" });
         $('.button.sleep').attr({ "disabled": false, "class": "button sleep nes-btn" });
         
-        $('#display__background').attr({ "src": "https://i.pinimg.com/originals/09/5a/e8/095ae863a15f046100edf8efaa240452.jpg", style: "opacity:1"});
+        $('.display__background').attr({ "src": "https://i.pinimg.com/originals/09/5a/e8/095ae863a15f046100edf8efaa240452.jpg", style: "opacity:1"});
     },
 
     decreaseSleep(){
-        if(kaisen.sleepiness < 8){
-        kaisen.sleepiness-=8;
-        $('#sleepiness').text(`Sleepiness: ${kaisen.sleepiness}`);
+        if(kaisen.sleepiness > 5){
+            kaisen.sleepiness-=5;
+            $('#sleepiness').text(`Sleepiness: ${kaisen.sleepiness}`);
+        }else if( kaisen.sleepiness >4){
+            kaisen.sleepiness -=4;
+            $('#sleepiness').text(`Sleepiness: ${kaisen.sleepiness}`);
+        }else if( kaisen.sleepiness >3){
+            kaisen.sleepiness -=3;
+            $('#sleepiness').text(`Sleepiness: ${kaisen.sleepiness}`);
+        }else if( kaisen.sleepiness >2){
+            kaisen.sleepiness -=2;
+            $('#sleepiness').text(`Sleepiness: ${kaisen.sleepiness}`);
+        }else if(kaisen.sleepiness >=1){
+            kaisen.sleepiness --;
+            $('#sleepiness').text(`Sleepiness: ${kaisen.sleepiness}`);
         }
         $('.display__character').attr("id", "animation__sleep");
         
@@ -174,7 +199,7 @@ const kaisen = {
         $('.button.train').attr({ "disabled": false, "class": "button train nes-btn" });
         $('.button.sleep').attr({ "disabled": true, "class": "button sleep nes-btn is-disabled"});
 
-        $('#display__background').attr({
+        $('.display__background').attr({
             "src": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/84a4b3da-9529-4827-95f2-bccefd8d8869/dcy0ej2-7c548891-bb0c-475c-ba67-8e8fcfe6919d.png/v1/fill/w_1280,h_720,q_80,strp/anime_bedroom_backround_by_shinasty_dcy0ej2-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvODRhNGIzZGEtOTUyOS00ODI3LTk1ZjItYmNjZWZkOGQ4ODY5XC9kY3kwZWoyLTdjNTQ4ODkxLWJiMGMtNDc1Yy1iYTY3LThlOGZjZmU2OTE5ZC5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.orXJUHL2urpZNTJVZuRy4BJwXyWTMxkC-GblQOjkfn0", style:"opacity:0.8"});
         // setTimeout(kaisen.pauseAndSleep, 5000);
     },
@@ -195,7 +220,7 @@ const kaisen = {
         $('.number').attr('id', 'timer__number' );
         $('#timer__number').text(`${kaisen.time}s`);
 
-        if (kaisen.time == 40 || kaisen.time == 20 ){
+        if (kaisen.time == 50 || kaisen.time == 40 || kaisen.time == 30 || kaisen.time == 20 || kaisen.time ==10){
             kaisen.increaseSukunaLevel();
         } else if( kaisen.time == 60){
             kaisen.increaseSukunaLevel();
@@ -209,13 +234,18 @@ const kaisen = {
     increaseSukunaLevel(){
         kaisen.sukuna++;
         $('#level').text(`Sukuna: ${kaisen.sukuna}`);
-        if(kaisen.sukuna >= 20){
-            $('h1').text('=== YOU WIN ===');
-            kaisen.resetGame();
+        if(kaisen.sukuna > 6){
+            kaisen.winRound();
+            clearInterval(kaisen.game);
+            clearInterval(kaisen.timer);
         }
         
     },
-
+    winRound(){
+        $('.display__character').attr("id", "character__hidden");
+        $('.display__background').attr({"src": "https://static.zerochan.net/Jujutsu.Kaisen.full.3232404.jpg", style:"opacity:1"});
+        $('h1').text('=== YOU WIN ===');
+    },
 
     /* SECTION ==== Modifying the metric/ stats relative to time */
     //ANCHOR
@@ -226,10 +256,10 @@ const kaisen = {
 },
     endGame(){
         $('.display__character').attr("id", "character__hidden");
-            $('h1').text('=== GAME IS OVER ====');
-            $('#display__background').attr("src", "https://recenthighlights.com/wp-content/uploads/2020/11/Jujutsu-Kaisen-Itadori-Death-1024x576.jpg");
-            clearInterval(kaisen.game);
-            clearInterval(kaisen.timer);
+        $('h1').text('=== GAME IS OVER ====');
+        $('.display__background').attr("src", "https://recenthighlights.com/wp-content/uploads/2020/11/Jujutsu-Kaisen-Itadori-Death-1024x576.jpg");
+        clearInterval(kaisen.game);
+        clearInterval(kaisen.timer);
 },
     increaseHunger(){
         if(this.hunger < 10){
