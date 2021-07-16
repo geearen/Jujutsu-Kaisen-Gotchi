@@ -231,3 +231,7 @@ $('.button.sleep').on("click", kaisen.decreaseSleep);
 $('#start').on("click", kaisen.startGame);
 
 $('#reset').on("click", kaisen.resetGame);
+
+//AUDIO
+const audio = document.getElementById('music');
+audio.volume = 0.2;
